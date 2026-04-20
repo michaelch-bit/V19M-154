@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://thegoodguys.com.au/pos/docket"
+           xmlns="http://thegoodguys.com.au/pos/docket"
+           elementFormDefault="qualified">
+  <xs:element name="DOCKET">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DKT_NBR" type="xs:string"/>
+        <xs:element name="POS_LOCN_NBR" type="xs:string"/>
+        <xs:element name="DOC_REF1" type="xs:string" minOccurs="0"/>
+        <xs:element name="TRANS_TIMESTAMP" type="xs:dateTime"/>
+        <xs:element name="TRANS_LINES">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TRANS_LINE" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="DKT_LNE_NBR" type="xs:integer"/>
+                    <xs:element name="PROD_NBR" type="xs:string"/>
+                    <xs:element name="TRANS_TYPE" type="xs:string"/>
+                    <xs:element name="PREV_TRANS_TYPE" type="xs:string" minOccurs="0"/>
+                    <xs:element name="TRANS_QTY" type="xs:decimal"/>
+                    <xs:element name="PREV_QTY" type="xs:decimal" minOccurs="0"/>
+                    <xs:element name="SRETN_CREATE_IND" type="xs:string" minOccurs="0"/>
+                    <xs:element name="FULFILMENT_LOCATION" type="xs:string" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
