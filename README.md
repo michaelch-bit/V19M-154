@@ -3,3 +3,5 @@ Reserving stock receipt for web sale backorders fails in nonprod env due to miss
 
 This repository now includes an OCI UAT MW docket schema update that allows the
 `FULFILMENT_LOCATION` element inside `TRANS_LINE`.
+
+See [tests/TEST_CASES.md](tests/TEST_CASES.md) for the full set of documented test cases.
